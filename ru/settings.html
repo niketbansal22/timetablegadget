@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link rel="stylesheet" type="text/css" href="settings.css">
+	<script type="text/javascript" src="settings.js"></script>
+  </head>
+  <body id="settings" onLoad="main()">
+	<p>
+		<label for="day">День недели</label><br>
+		<select id="day" onChange="selectDay()">
+			<option value="mon">Понедельник</option>
+			<option value="tue">Вторник</option>
+			<option value="wed">Среда</option>
+			<option value="thu">Четверг</option>
+			<option value="fri">Пятница</option>
+			<option value="sat">Суббота</option>
+		</select>
+		<input type="checkbox" id="evenWeek">Четная неделя</input>
+	</p>
+	<div>
+		<pre>Четная неделя	  Нечетная неделя</pre>
+		<div id="mon">
+			<div style="float:left;">
+				<label for="mon1">Первая пара:</label><br>
+				<input id="mon1" type="text"></input><br><br>
+				<label for="mon2">Вторая пара:</label><br>
+				<input id="mon2" type="text"></input><br><br>
+				<label for="mon3">Третья пара:</label><br>
+				<input id="mon3" type="text"></input><br><br>
+				<label for="mon4">Четвертая пара:</label><br>
+				<input id="mon4" type="text"></input><br><br>
+				<label for="mon5">Пятая пара:</label><br>
+				<input id="mon5" type="text"></input><br><br>
+				<label for="mon6">Шестая пара:</label><br>
+				<input id="mon6" type="text"></input><br><br>
+			</div>
+			<div style="float:left; padding-left:10px;">
+				<label for="mon1o">Первая пара:</label><br>
+				<input id="mon1o" type="text"></input><br><br>
+				<label for="mon2o">Вторая пара:</label><br>
+				<input id="mon2o" type="text"></input><br><br>
+				<label for="mon3o">Третья пара:</label><br>
+				<input id="mon3o" type="text"></input><br><br>
+				<label for="mon4o">Четвертая пара:</label><br>
+				<input id="mon4o" type="text"></input><br><br>
+				<label for="mon5o">Пятая пара:</label><br>
+				<input id="mon5o" type="text"></input><br><br>
+				<label for="mon6o">Шестая пара:</label><br>
+				<input id="mon6o" type="text"></input><br><br>				
+			</div>
+		</div>
+		
+		<div id="tue">
+			<div style="float:left">
+				<label for="tue1">Первая пара:</label><br>
+				<input id="tue1" type="text"></input><br><br>
+				<label for="tue2">Вторая пара:</label><br>
+				<input id="tue2" type="text"></input><br><br>
+				<label for="tue3">Третья пара:</label><br>
+				<input id="tue3" type="text"></input><br><br>
+				<label for="tue4">Четвертая пара:</label><br>
+				<input id="tue4" type="text"></input><br><br>
+				<label for="tue5">Пятая пара:</label><br>
+				<input id="tue5" type="text"></input><br><br>
+				<label for="tue6">Шестая пара:</label><br>
+				<input id="tue6" type="text"></input><br><br>
+			</div>
+			<div style="float:left; padding-left:10px">
+				<label for="tue1o">Первая пара:</label><br>
+				<input id="tue1o" type="text"></input><br><br>
+				<label for="tue2o">Вторая пара:</label><br>
+				<input id="tue2o" type="text"></input><br><br>
+				<label for="tue3o">Третья пара:</label><br>
+				<input id="tue3o" type="text"></input><br><br>
+				<label for="tue4o">Четвертая пара:</label><br>
+				<input id="tue4o" type="text"></input><br><br>
+				<label for="tue5o">Пятая пара:</label><br>
+				<input id="tue5o" type="text"></input><br><br>
+				<label for="tue6o">Шестая пара:</label><br>
+				<input id="tue6o" type="text"></input><br><br>
+			</div>
+		</div>
+		
+		<div id="wed">
+			<div style="float:left">
+				<label for="wed1">Первая пара:</label><br>
+				<input id="wed1" type="text"></input><br><br>
+				<label for="wed2">Вторая пара:</label><br>
+				<input id="wed2" type="text"></input><br><br>
+				<label for="wed3">Третья пара:</label><br>
+				<input id="wed3" type="text"></input><br><br>
+				<label for="wed4">Четвертая пара:</label><br>
+				<input id="wed4" type="text"></input><br><br>
+				<label for="wed5">Пятая пара:</label><br>
+				<input id="wed5" type="text"></input><br><br>
+				<label for="wed6">Шестая пара:</label><br>
+				<input id="wed6" type="text"></input><br><br>
+			</div>
+			<div style="float:left; padding-left:10px">
+				<label for="wed1o">Первая пара:</label><br>
+				<input id="wed1o" type="text"></input><br><br>
+				<label for="wed2o">Вторая пара:</label><br>
+				<input id="wed2o" type="text"></input><br><br>
+				<label for="wed3o">Третья пара:</label><br>
+				<input id="wed3o" type="text"></input><br><br>
+				<label for="wed4o">Четвертая пара:</label><br>
+				<input id="wed4o" type="text"></input><br><br>
+				<label for="wed5o">Пятая пара:</label><br>
+				<input id="wed5o" type="text"></input><br><br>
+				<label for="wed6o">Шестая пара:</label><br>
+				<input id="wed6o" type="text"></input><br><br>			
+			</div>
+		</div>
+
+		<div id="thu">
+			<div style="float:left;">
+				<label for="thu1">Первая пара:</label><br>
+				<input id="thu1" type="text"></input><br><br>
+				<label for="thu2">Вторая пара:</label><br>
+				<input id="thu2" type="text"></input><br><br>
+				<label for="thu3">Третья пара:</label><br>
+				<input id="thu3" type="text"></input><br><br>
+				<label for="thu4">Четвертая пара:</label><br>
+				<input id="thu4" type="text"></input><br><br>
+				<label for="thu5">Пятая пара:</label><br>
+				<input id="thu5" type="text"></input><br><br>
+				<label for="thu6">Шестая пара:</label><br>
+				<input id="thu6" type="text"></input><br><br>
+			</div>
+			<div style="float:left; padding-left:10px">
+				<label for="thu1o">Первая пара:</label><br>
+				<input id="thu1o" type="text"></input><br><br>
+				<label for="thu2o">Вторая пара:</label><br>
+				<input id="thu2o" type="text"></input><br><br>
+				<label for="thu3o">Третья пара:</label><br>
+				<input id="thu3o" type="text"></input><br><br>
+				<label for="thu4o">Четвертая пара:</label><br>
+				<input id="thu4o" type="text"></input><br><br>
+				<label for="thu5o">Пятая пара:</label><br>
+				<input id="thu5o" type="text"></input><br><br>
+				<label for="thu6o">Шестая пара:</label><br>
+				<input id="thu6o" type="text"></input><br><br>			
+			</div>
+		</div>	
+
+		<div id="fri">
+			<div style="float:left">
+				<label for="fri1">Первая пара:</label><br>
+				<input id="fri1" type="text"></input><br><br>
+				<label for="fri2">Вторая пара:</label><br>
+				<input id="fri2" type="text"></input><br><br>
+				<label for="fri3">Третья пара:</label><br>
+				<input id="fri3" type="text"></input><br><br>
+				<label for="fri4">Четвертая пара:</label><br>
+				<input id="fri4" type="text"></input><br><br>
+				<label for="fri5">Пятая пара:</label><br>
+				<input id="fri5" type="text"></input><br><br>
+				<label for="fri6">Шестая пара:</label><br>
+				<input id="fri6" type="text"></input><br><br>
+			</div>
+			<div style="float:left; padding-left:10px">
+				<label for="fri1o">Первая пара:</label><br>
+				<input id="fri1o" type="text"></input><br><br>
+				<label for="fri2o">Вторая пара:</label><br>
+				<input id="fri2o" type="text"></input><br><br>
+				<label for="fri3o">Третья пара:</label><br>
+				<input id="fri3o" type="text"></input><br><br>
+				<label for="fri4o">Четвертая пара:</label><br>
+				<input id="fri4o" type="text"></input><br><br>
+				<label for="fri5o">Пятая пара:</label><br>
+				<input id="fri5o" type="text"></input><br><br>
+				<label for="fri6o">Шестая пара:</label><br>
+				<input id="fri6o" type="text"></input><br><br>			
+			</div>
+		</div>	
+
+		<div id="sat">
+			<div style="float:left">
+				<label for="sat1">Первая пара:</label><br>
+				<input id="sat1" type="text"></input><br><br>
+				<label for="sat2">Вторая пара:</label><br>
+				<input id="sat2" type="text"></input><br><br>
+				<label for="sat3">Третья пара:</label><br>
+				<input id="sat3" type="text"></input><br><br>
+				<label for="sat4">Четвертая пара:</label><br>
+				<input id="sat4" type="text"></input><br><br>
+				<label for="sat5">Пятая пара:</label><br>
+				<input id="sat5" type="text"></input><br><br>
+				<label for="sat6">Шестая пара:</label><br>
+				<input id="sat6" type="text"></input><br><br>
+			</div>
+			<div style="float:left; padding-left:10px">
+				<label for="sat1o">Первая пара:</label><br>
+				<input id="sat1o" type="text"></input><br><br>
+				<label for="sat2o">Вторая пара:</label><br>
+				<input id="sat2o" type="text"></input><br><br>
+				<label for="sat3o">Третья пара:</label><br>
+				<input id="sat3o" type="text"></input><br><br>
+				<label for="sat4o">Четвертая пара:</label><br>
+				<input id="sat4o" type="text"></input><br><br>
+				<label for="sat5o">Пятая пара:</label><br>
+				<input id="sat5o" type="text"></input><br><br>
+				<label for="sat6o">Шестая пара:</label><br>
+				<input id="sat6o" type="text"></input><br><br>				
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

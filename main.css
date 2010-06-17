@@ -1,0 +1,82 @@
+body 
+{
+	margin: 0px;
+	width: 154px;
+	height: 254px;
+	background-color: #ffffff;
+}
+
+#gbody
+{
+	width: 154px;
+	height: 254px;
+}
+
+#content
+{
+	float: left;
+	margin-left: 17px;
+	margin-top: 17px;
+	width: 114px;
+	height: 207px;
+}
+
+#dayweek
+{
+	font-family: Myriad Pro;
+	font-weight: bold;
+	font-size: 17px;
+	color: #ffffff;
+}
+
+#date
+{
+	font-family: Myriad Pro;
+	font-weight: bold;
+	font-size: 13px;
+	color: #ffffff;	
+}
+
+#even
+{
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	color: #b9c1c6;
+}
+
+#timetable
+{
+	margin-left: 5px;
+	width: 109px;
+	font-family: Arial;
+	font-size: 10px;
+	color: #ffffff;
+}
+
+#bottombar
+{
+	float: left;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	width: 154px;
+	height: 30px;
+}
+
+#arrleft
+{
+	float: left;
+	width: 16px;
+	height: 13px;
+	margin-top: 3px;
+	margin-left: 15px;
+}
+ 
+#arrright
+{
+	float: right;
+	width: 16px;
+	height: 13px;
+	margin-top: 3px;
+	margin-right: 14px;
+}

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<gadget>
+    <name>Расписание</name>
+    <version>0.2.0</version>
+    <author name="Илья Бреев">
+        <info url="http://ссылка..." />
+    </author>
+    <copyright>&#169; 2010</copyright>
+    <description>Гаджет-расписание для студентов.</description>
+    <hosts>
+        <host name="sidebar">
+            <base type="HTML" apiVersion="1.0.0" src="main.html" />
+			
+            <permissions>full</permissions>
+            <platform minPlatformVersion="0.3" />
+			<defaultImage src="img/dockedBg.png" />
+        </host>
+    </hosts>
+</gadget>
