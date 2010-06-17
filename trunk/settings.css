@@ -1,0 +1,27 @@
+﻿* 
+{
+	margin:0px;
+	padding:0px;
+}
+
+body 
+{
+	font: normal 14px/16px Segoe UI, Arial;
+	width: 600px;
+	height: 420px;
+}
+
+p 
+{
+	margin: 10px 0px;
+}
+
+small 
+{
+	font-size:11px;
+}
+
+#tue, #wed, #thu, #fri, #sat, #sun
+{
+	display: none;
+}
