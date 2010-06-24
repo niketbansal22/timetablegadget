@@ -39,13 +39,15 @@ function dayOfWeek()
 function dayOutput()
 {
 	// вывод дня недели
-	document.getElementById("dayweek").innerText = daysOfWeek[curDate.getDay()];
+	$('#dayweek').html(strings[daysOfWeek[curDate.getDay()]]);
 	
 	// вывод числа и месяца
-	document.getElementById("date").innerText = curDate.getDate() + " " + months[curDate.getMonth()];
+	$('#date').html(curDate.getDate() + " " + strings[months[curDate.getMonth()]]);
+	//document.getElementById("date").innerText = curDate.getDate() + " " + months[curDate.getMonth()];
 	
 	// вывод четности недели
-	document.getElementById("even").innerText = (getParity()) ? "even week" : "odd week";
+	$('#even').html(strings[getParity()]);
+	//document.getElementById("even").innerText = (getParity()) ? "even week" : "odd week";
 	
 	// вывод расписания
 	timetableOutput(curDate.getDay());	
@@ -125,8 +127,10 @@ function next()
 // получить четность недели из настроек
 function getParity()
 {
-	evenWeek = (System.Gadget.Settings.readString("evenWeek") == "true") ? true : false;
-	return evenWeek;
+	if (System.Gadget.Settings.readString("evenWeek") == true)
+		return "even";
+	else
+		return "odd";
 }
 
 // установить четность недели в настройках
@@ -136,3 +140,7 @@ function setInverseParity()
 	evenWeek = !evenWeek;
 	return evenWeek;
 }
+
+$(document).ready( function() {
+	init();
+});
