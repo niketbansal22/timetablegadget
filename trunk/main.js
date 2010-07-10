@@ -43,11 +43,11 @@ function dayOutput()
 	
 	// вывод числа и месяца
 	$('#date').html(curDate.getDate() + " " + strings[months[curDate.getMonth()]]);
-	//document.getElementById("date").innerText = curDate.getDate() + " " + months[curDate.getMonth()];
+	// document.getElementById("date").innerText = curDate.getDate() + " " + months[curDate.getMonth()];
 	
 	// вывод четности недели
 	$('#even').html(strings[getParity()]);
-	//document.getElementById("even").innerText = (getParity()) ? "even week" : "odd week";
+	// document.getElementById("even").innerText = (getParity()) ? "even week" : "odd week";
 	
 	// вывод расписания
 	timetableOutput(curDate.getDay());	

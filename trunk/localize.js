@@ -6,7 +6,7 @@ $(document).ready( function() {
 			for (var i = 0, c = list.length; i < c; i++) {
 				var namesAndValues = list[i].split(':');
 				if (namesAndValues.length == 1) {
-					$(this).html(strings[namesAndValues[0]]);
+					$(this).prepend(strings[namesAndValues[0]]);
 				}
 				else {
 					$(this).attr(namesAndValues[0], strings[namesAndValues[1]]);
