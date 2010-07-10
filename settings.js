@@ -1,9 +1,20 @@
-﻿/************************************************************
+﻿ /************************************************************
 	settings.js v1.0
 	
 	скрипт содержит функционал окна настроек гаджета
 
 ************************************************************/
+var pairs = [
+	'first',
+	'second',
+	'third',
+	'fourth',
+	'fifth',
+	'sixth',
+	'seventh',
+	'eight',
+	'ningth'
+];
 
 // обработчик события закрытия окна настроек
 function settingsClosing(event) 
@@ -18,33 +29,12 @@ function settingsClosing(event)
     }
 }
 
-// скрытие всех полей ввода для всех дней недели
-function hideAllFields()
-{
-	// скрыть все поля ввода для всех дней недели
-	// display: none
-	mon.style.display = 'none';
-	tue.style.display = 'none';
-	wed.style.display = 'none';
-	thu.style.display = 'none';
-	fri.style.display = 'none';
-	sat.style.display = 'none';
-}
+// выбор дня недели из списка
+$('#slctDay').change( function() {
+	var selectedDay = $(this).val();		
+});
 
-// показ полей для выбранного дня недели
-function showFields(selectedDay)
-{
-	// показать поля ввода для какого-то дня недели
-	// display: block
-	hideAllFields();
-	document.getElementById(selectedDay).style.display = 'block';
-}
 
-// выбор дня недели (вызывается при выборе дня из списка)
-function selectDay()
-{
-	showFields(document.getElementById("day").value);
-}
 
 // сохранение информации о парах для какого-либо дня недели
 function savePairs(dayOfWeek)
@@ -81,7 +71,7 @@ function saveSettings()
 }
 
 // восстановление настроек гаджета (информация о парах и четности недели)
-function restoreSettings()
+function getSettings()
 {
 	// восстановить информацию о парах
 	restorePairs('mon');
@@ -96,11 +86,18 @@ function restoreSettings()
 }
 
 // главная функция окна настроек
-function main() 
-{
-	// установить обработчик закрытия окна
-    System.Gadget.onSettingsClosing = settingsClosing;
-	
-	// восстановить значения настроек
-	restoreSettings();
-}
+$(document).ready( function() {
+	debugger;
+	System.Gadget.onSettingsClosing = settingsClosing;
+	//getSettings();		
+	$('.more').click( function() {
+		debugger;
+		var nextDayIndex = Number($('.lastPair').attr('id')) + 1;
+		var labelLocale = strings[pairs[nextDayIndex]];
+		var fieldCode = '<label for="' + nextDayIndex + '">' + labelLocale + '</label><br>' +
+						'<input id="' + nextDayIndex + '" type="text" class="lastPair" /><br><br>';
+		$('.lastPair').removeClass('lastPair');
+		$(this).parent().siblings().append(fieldCode);
+		return false;
+	});
+});
