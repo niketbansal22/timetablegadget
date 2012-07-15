@@ -5,7 +5,6 @@ var evenWeek = false;
 var daysOfWeek = ["sunday", "monday", "tuesday", "wednsday", "thursday", "friday", "saturday"];
 var months = ["january", "february", "march", "april", "may", "june", "jule", "august", "september", "october", "november", "december"];
 
-// инициализация
 function init()
 {
 	System.Gadget.settingsUI = 'settings.html';
@@ -14,18 +13,16 @@ function init()
 	dayOfWeek();
 }
 
-// отслеживание смены даты
 function dayOfWeek()
 {
-	// получение сегодняшней даты и дня недели
 	todayDate = new Date();
 	var today = todayDate.getDay();
 	
-	if (prevDay != today) // переход между днями
+	if (prevDay != today)
 	{
-		if ( (prevDay == 0) && (today == 1) )	// переход с воскресенья на понедельник
+		if ( (prevDay == 0) && (today == 1) )
 		{
-			setInverseParity();	// смена четности недели
+			setInverseParity();	
 		}
 		prevDay = today;
 		curDate = todayDate;
@@ -35,21 +32,12 @@ function dayOfWeek()
 	setTimeout(dayOfWeek, 1000);
 }
 
-// вывод информации о "текущем" дне
 function dayOutput()
 {
-	// вывод дня недели
 	$('#dayweek').html(strings[daysOfWeek[curDate.getDay()]]);
-	
-	// вывод числа и месяца
 	$('#date').html(curDate.getDate() + " " + strings[months[curDate.getMonth()]]);
-	// document.getElementById("date").innerText = curDate.getDate() + " " + months[curDate.getMonth()];
-	
-	// вывод четности недели
 	$('#even').html(strings[getParity()]);
-	// document.getElementById("even").innerText = (getParity()) ? "even week" : "odd week";
 	
-	// вывод расписания
 	timetableOutput(curDate.getDay());	
 }
 
@@ -83,48 +71,38 @@ function timetableOutput(day)
 	}
 	
 	if (noLectures)
-	{
-		timetable.innerHTML = "<br>There are no lectures today.";
-	}
+		$('#timetable').html('<br>There are no lectures today');
 	else
 	{		
 		var ev = (evenWeek == true) ? "" : "o";
-		
-		timetable.innerText = "";
-		timetable.innerHTML += "<br>";
+		$('#timetable').html('<br>');
 		
 		for (i=1; i<=6; i++)
 		{
 			var text = System.Gadget.Settings.readString(dayOfWeek + i + ev);
-			timetable.innerHTML += i + ": " + ((text == "") ? "empty" : text);
-			timetable.innerHTML += "<br>";
+			$('#timetable').html($('#timetable').html() + i + ": " + ((text == "") ? "empty" : text) + '<br');
 		}
 	}
 }
 
-// переход на предыдущий день (листать)
 function previous()
 {
-	// запретить переход на предыдущую неделю
-	if (curDate.getDay() != 1)	// если не понедельник
+	if (curDate.getDay() != 1)
 	{
 		curDate = new Date(curDate.getYear(), curDate.getMonth(), curDate.getDate() - 1);
 		dayOutput();
 	}
 }
 
-// переход на следующий день (листать)
 function next()
 {
-	// запретить переход на след. неделю
-	if (curDate.getDay() != 0)	// если не воскресенье
+	if (curDate.getDay() != 0)
 	{
 		curDate = new Date(curDate.getYear(), curDate.getMonth(), curDate.getDate() + 1);
 		dayOutput();
 	}
 }
 
-// получить четность недели из настроек
 function getParity()
 {
 	if (System.Gadget.Settings.readString("evenWeek") == true)
@@ -133,7 +111,6 @@ function getParity()
 		return "odd";
 }
 
-// установить четность недели в настройках
 function setInverseParity()
 {
 	System.Gadget.Settings.writeString("evenWeek", (!evenWeek).toString());
