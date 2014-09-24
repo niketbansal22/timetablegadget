@@ -4,11 +4,16 @@
 	padding:0px;
 }
 
+html {
+	overflow: scroll;
+}
+
 body 
 {
 	font: normal 14px/16px Segoe UI, Arial;
 	width: 600px;
-	height: 420px;
+	height: 450px;
+	overflow: scroll;
 }
 
 p 

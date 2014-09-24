@@ -91,7 +91,7 @@ function timetableOutput(day)
 		timetable.innerText = "";
 		timetable.innerHTML += "<br>";
 		
-		for (i=1; i<=6; i++)
+		for (i=1; i<=8; i++)
 		{
 			var text = System.Gadget.Settings.readString(dayOfWeek + i + ev);
 			timetable.innerHTML += i + ": " + ((text == "") ? "empty" : text);
