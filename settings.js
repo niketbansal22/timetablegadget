@@ -5,6 +5,8 @@
 
 ************************************************************/
 
+var pairCount = 8;
+
 // обработчик события закрытия окна настроек
 function settingsClosing(event) 
 {
@@ -49,7 +51,7 @@ function selectDay()
 // сохранение информации о парах для какого-либо дня недели
 function savePairs(dayOfWeek)
 {
-	for (i=1; i<=6; i++)
+	for (i=1; i<=pairCount; i++)
 	{
 		System.Gadget.Settings.writeString(dayOfWeek + i, document.getElementById(dayOfWeek + i).value);
 		System.Gadget.Settings.writeString(dayOfWeek + i + "o", document.getElementById(dayOfWeek + i + "o").value);
@@ -59,7 +61,7 @@ function savePairs(dayOfWeek)
 // восстановление информаци о парах для какого-либо дня недели
 function restorePairs(dayOfWeek)
 {
-	for (i=1; i<=6; i++)
+	for (i=1; i<=pairCount; i++)
 	{
 		document.getElementById(dayOfWeek + i).value = System.Gadget.Settings.readString(dayOfWeek + i);
 		document.getElementById(dayOfWeek + i + "o").value = System.Gadget.Settings.readString(dayOfWeek + i + "o");
