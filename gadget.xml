@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <gadget>
     <name>Timetable</name>
-    <version>0.2.0</version>
+    <version>0.3.0</version>
     <author name="Ilya Breev">
         <info url="http://Link..." />
     </author>
