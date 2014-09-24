@@ -2,8 +2,8 @@ var prevDay = 1;
 var curDate = new Date();
 var todayDate = new Date();
 var evenWeek = false;
-var daysOfWeek = ["sunday", "monday", "tuesday", "wednsday", "thursday", "friday", "saturday"];
-var months = ["january", "february", "march", "april", "may", "june", "jule", "august", "september", "october", "november", "december"];
+var daysOfWeek = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+var months = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
 
 // инициализация
 function init()
@@ -45,7 +45,7 @@ function dayOutput()
 	document.getElementById("date").innerText = curDate.getDate() + " " + months[curDate.getMonth()];
 	
 	// вывод четности недели
-	document.getElementById("even").innerText = (getParity()) ? "even week" : "odd week";
+	document.getElementById("even").innerText = (getParity()) ? "чётная неделя" : "нечётная неделя";
 	
 	// вывод расписания
 	timetableOutput(curDate.getDay());	
@@ -82,7 +82,7 @@ function timetableOutput(day)
 	
 	if (noLectures)
 	{
-		timetable.innerHTML = "<br>There are no lectures today.";
+		timetable.innerHTML = "<br>Cегодня занятий нет";
 	}
 	else
 	{		
@@ -94,7 +94,7 @@ function timetableOutput(day)
 		for (i=1; i<=6; i++)
 		{
 			var text = System.Gadget.Settings.readString(dayOfWeek + i + ev);
-			timetable.innerHTML += i + ": " + ((text == "") ? "empty" : text);
+			timetable.innerHTML += i + ": " + ((text == "") ? "пусто" : text);
 			timetable.innerHTML += "<br>";
 		}
 	}
