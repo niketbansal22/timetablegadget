@@ -25,14 +25,3 @@ small
 {
 	display: none;
 }
-
-.evenWeek
-{
-	float: left;
-}
-
-.oddWeek
-{
-	float: left;
-	padding-left: 10px;
-}
